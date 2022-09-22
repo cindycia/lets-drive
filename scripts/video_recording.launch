@@ -1,0 +1,10 @@
+<launch>
+  <arg name="port" />
+  <arg name="mode" />
+
+  <node name="record_$(arg port)" pkg="image_view" type="video_recorder" respawn="false" required="true" output="screen">
+   <remap from="image" to="spectator_images"/>
+   <param name="fps" value="60"/>
+   <param name="filename" value="$(arg mode)_$(arg port)"/>
+  </node>
+</launch>

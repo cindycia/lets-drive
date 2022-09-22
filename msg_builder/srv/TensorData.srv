@@ -1,0 +1,11 @@
+int32 batchsize
+float32[] cur_vel 
+float32[] tensor
+float32[] semantic_tensor 
+string mode
+---
+float32[] value
+float32[] acc
+float32[] ang
+float32[] vel 
+float32[] lane

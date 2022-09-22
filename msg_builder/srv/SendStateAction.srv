@@ -1,0 +1,14 @@
+uint8[] state
+float32[] semantic
+float32[] action_probs
+float32 reward
+float32 value_ncol_factor
+float32 value_col_factor
+float32[] qvalue
+float32 action
+float32 vel
+float32 value
+float32 ttc
+bool is_terminal
+---
+bool success

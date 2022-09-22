@@ -1,0 +1,11 @@
+State[] particles 
+float32[] state_tensor_0
+float32[] state_tensor_1
+float32[] state_tensor_2
+float32[] state_tensor_3
+float32[] semantic_tensor
+car_meta meta
+string map_loc
+int32 depth
+TrafficAgentArray agents
+AgentPathArray agent_paths

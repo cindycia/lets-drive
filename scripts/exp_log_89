@@ -1,0 +1,68 @@
+Parsing config
+=> Running imitation drive_mode
+============== [run_data_collection.py] cmd_args ==============
+port=4000
+ros_port=4111
+ros command prefix: ROS_MASTER_URI=http://localhost:4111 
+summit map location: meskel_square
+summit random seed: 2046621
+launch summit: False
+start_round: 0
+end_round: 1
+timeout: 130.0
+verbosity: 1
+window: 0
+record: False
+gpu id: 0
+time scale: 1.0
+test mode: 0
+============== [run_data_collection.py] cmd_args ==============
+[run_data_collection.py] pid = 88
+[clear_process.py] SubprocessMonitor initialized at port 4111
+[run_data_collection.py] roslaunch summit_connector connector.launch port:=4000 pyro_port:=10100 map_location:=meskel_square random_seed:=2046621 num_car:=75 num_bike:=25 num_ped:=10 ego_control_mode:=other ego_speed_mode:=vel
+[summit_simulator.py] spawning meshes
+=> Search log /root/driving_data/result/imitation_mode/meskel_square/pomdp_search_log-0_0_pid-88_r-2046621.txt
+[run_data_collection.py] roslaunch --wait crowd_pomdp_planner planner.launch gpu_id:=0 mode:=1 summit_port:=4000 time_scale:=1.00 map_location:=meskel_square actor_mode:=actor
+[run_data_collection.py] POMDP planning...
+[run_data_collection.py] SubprocessMonitor started
+[summit_simulator.py] spawning imagery
+[summit_simulator.py] Spawning crowd
+[clear_process.py] SubprocessMonitor activated
+[clear_process.py] ROS MASTER is OFFLINE
+[clear_process.py] roscore has died!!
+Ego_vehicle control mode: other
+Ego_vehicle speed mode: vel
+Ego-vehicle at 463.148956299 308.770599365
+[crowd_processor.py] waiting for ego car state
+Ego-vehicle start driving
+[run_data_collection.py] episode successfully ended
+[run_data_collection.py] POMDP planner exited in 26.790149688720703 s
+[run_data_collection.py] Finish data: sample_0_0
+[run_data_collection.py] End of run_data_collection script
+[run_data_collection.py] is ending! Clearing ros nodes...
+[clear_process.py]  Cleaning ros: ['ROS_MASTER_URI=http://localhost:4111 yes | rosclean purge']
+Purging ROS node logs.
+PLEASE BE CAREFUL TO VERIFY THE COMMAND BELOW!
+Okay to perform:
+
+rm -rf /root/.ros/log
+(y/n)?
+[clear_process.py] rosnode list | grep -v rosout | xargs rosnode kill
+[Errno 2] No such file or directory: 'rosnode list | grep -v rosout | xargs rosnode kill': 'rosnode list | grep -v rosout | xargs rosnode kill'
+[run_data_collection.py] is ending! Clearing Processes...
+[run_data_collection.py] is ending! Clearing timer...
+[run_data_collection.py] is ending! Clearing subprocesses...
+[clear_process.py] clearing queue [(<subprocess.Popen object at 0x7f4fc22564a8>, 'summit_connector_proc', None)]
+[clear_process.py] killing summit_connector_proc
+GAMMA loop running.
+Spawn-destroy loop running.
+Control loop running.
+[clear_process.py] Subprocess summit_connector_proc has died
+[clear_process.py]  Cleaning ros: ['ROS_MASTER_URI=http://localhost:4111 yes | rosclean purge']
+[clear_process.py] rosnode list | grep -v rosout | xargs rosnode kill
+[Errno 2] No such file or directory: 'rosnode list | grep -v rosout | xargs rosnode kill': 'rosnode list | grep -v rosout | xargs rosnode kill'
+[clear_process.py]  clearing process
+[clear_process.py] pkill -9 CarlaUE4-Linux-
+[clear_process.py] pkill -9 ped_pomdp
+[clear_process.py]  clearing ros
+[clear_process.py] pkill -9 python3

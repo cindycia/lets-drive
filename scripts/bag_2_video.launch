@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="rosbag" type="play" name="rosbag" required="true" args="$(dirname)/spectator_images.bag"/>
+  <node name="extract" pkg="image_view" type="extract_images" respawn="false" required="true" output="screen" cwd="ROS_HOME">
+   <remap from="image" to="spectator_images"/>
+   <param name="sec_per_frame" value="0.01"/>
+  </node>
+</launch>
