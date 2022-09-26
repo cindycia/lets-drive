@@ -1,6 +1,6 @@
 sudo apt-get -y update && apt-get -y upgrade
 sudo apt-get -y install g++ git libgflags-dev libgoogle-glog-dev \
-    libomp5 libomp-dev libiomp-dev libopenmpi-dev protobuf-compiler \
+    libomp5 libomp-dev libopenmpi-dev protobuf-compiler \
     python3 python3-pip python3-setuptools python3-yaml wget
 
 # Install CMake 3.14
@@ -26,7 +26,8 @@ echo TORCH_CUDA_ARCH_LIST: $TORCH_CUDA_ARCH_LIST
 export TORCH_NVCC_FLAGS="-Xfatbin -compress-all"
 pytorch_dir=pytorch
 libtorch_dir=libtorch
-cd && git clone --recurse-submodules -j8 https://github.com/pytorch/pytorch.git $pytorch_dir
+# cd && git clone --recurse-submodules -j8 https://github.com/pytorch/pytorch.git $pytorch_dir
+cd && git clone -b master --recurse-submodule https://github.com/pytorch/pytorch.git $pytorch_dir
 
 # Compile libtorch and install
 # cd && cd $pytorch_dir && git checkout 8fb756d3b25be6b8f56bbd0d7b52b1f1ed1e7119
