@@ -50,5 +50,5 @@ sudo sed -i "119s/https:\/\//${GHPROXY}/" \
 	/usr/lib/python3/dist-packages/rosdistro/manifest_provider/github.py
 
 # 7
-sudo sed -i "34s/^/        gbpdistro_url=\"${GHPROXY}\"+gbpdistro_url\n/" \
+sudo sed -i "34s/https:\/\//${GHPROXY}/" \
 	/usr/lib/python3/dist-packages/rosdep2/gbpdistro_support.py
