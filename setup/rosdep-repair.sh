@@ -2,6 +2,7 @@
 
 # Ref: https://blog.csdn.net/leida_wt/article/details/115120940
 
+STR='https:\/\/raw.githubusercontent.com'
 GHPROXY='https:\/\/ghproxy.com\/'
 
 # 1
@@ -16,7 +17,7 @@ else
 	# sudo sed -i "311s/^/        url=\"${GHPROXY}\"+url\n/" \
 	#	/usr/lib/python3/dist-packages/rosdep2/sources_list.py
 	
-	sudo sed -i "s/https:\/\/raw.githubusercontent.com/${GHPROXY}https:\/\/raw.githubusercontent.com/g" \
+	sudo sed -i "s/${STR}/${GHPROXY}${STR}/g" \
 	/etc/ros/rosdep/sources.list.d/20-default.list
 fi
 
