@@ -6,6 +6,10 @@ STR='https:\/\/raw.githubusercontent.com'
 GHPROXY='https:\/\/ghproxy.com\/'
 
 # 1
+
+sudo sed -i "s/${STR}/${GHPROXY}${STR}/g" \
+	/etc/ros/rosdep/sources.list.d/20-default.list
+	
 if [ -f /usr/lib/python3/dist-packages/rosdep2/sources_list.py.bak ]; then
 	echo "PASS to EXIT!!!!!!"
 	exit 0
@@ -16,9 +20,6 @@ else
 
 	# sudo sed -i "311s/^/        url=\"${GHPROXY}\"+url\n/" \
 	#	/usr/lib/python3/dist-packages/rosdep2/sources_list.py
-	
-	sudo sed -i "s/${STR}/${GHPROXY}${STR}/g" \
-	/etc/ros/rosdep/sources.list.d/20-default.list
 fi
 
 
