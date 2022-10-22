@@ -13,8 +13,11 @@ else
 	sudo cp -rvf /usr/lib/python3/dist-packages/rosdep2/sources_list.py \
 	             /usr/lib/python3/dist-packages/rosdep2/sources_list.py.bak
 
-	sudo sed -i "311s/^/        url=\"${GHPROXY}\"+url\n/" \
-		/usr/lib/python3/dist-packages/rosdep2/sources_list.py
+	# sudo sed -i "311s/^/        url=\"${GHPROXY}\"+url\n/" \
+	#	/usr/lib/python3/dist-packages/rosdep2/sources_list.py
+	
+	sudo sed -i "s/https:\/\/raw.githubusercontent.com/${GHPROXY}https:\/\/raw.githubusercontent.com/g" \
+	/etc/ros/rosdep/sources.list.d/20-default.list
 fi
 
 
@@ -24,17 +27,17 @@ sudo sed -i "68s/https:\/\//${GHPROXY}/" \
 
 
 # 3
-sudo sed -i "36s/https:\/\//${GHPROXY}/" \
+sudo sed -i "34s/https:\/\//${GHPROXY}/" \
 	/usr/lib/python3/dist-packages/rosdep2/gbpdistro_support.py
 
 
 # 4
-sudo sed -i "72s/https:\/\//${GHPROXY}/" \
+sudo sed -i "64s/https:\/\//${GHPROXY}/" \
 	/usr/lib/python3/dist-packages/rosdep2/sources_list.py
 
 
 # 5
-sudo sed -i "39s/https:\/\//${GHPROXY}/" \
+sudo sed -i "36s/https:\/\//${GHPROXY}/" \
 	/usr/lib/python3/dist-packages/rosdep2/rep3.py
 
 
@@ -46,5 +49,5 @@ sudo sed -i "119s/https:\/\//${GHPROXY}/" \
 	/usr/lib/python3/dist-packages/rosdistro/manifest_provider/github.py
 
 # 7
-sudo sed -i "204s/^/        gbpdistro_url=\"${GHPROXY}\"+gbpdistro_url\n/" \
+sudo sed -i "34s/^/        gbpdistro_url=\"${GHPROXY}\"+gbpdistro_url\n/" \
 	/usr/lib/python3/dist-packages/rosdep2/gbpdistro_support.py
