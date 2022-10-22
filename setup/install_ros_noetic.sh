@@ -11,6 +11,7 @@ source ~/.bashrc
 sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 
 sudo rosdep init
+# for m.l.china only, run this bash to fix the time out issue of rosdep update: bash rosdep-repair.sh
 rosdep update
 
 sudo sh \
