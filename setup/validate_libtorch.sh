@@ -1,4 +1,4 @@
-g++ torch-example.cc \
+g++ validate_libtorch.cc \
 -std=c++17 \
 -D_GLIBCXX_USE_CXX11_ABI=1 \
 -I${LIBTORCH_SYS}/include \
@@ -6,4 +6,4 @@ g++ torch-example.cc \
 -L${LIBTORCH_SYS}/lib \
 -Wl,-R${LIBTORCH_SYS}/lib \
 -ltorch -ltorch_cpu -lc10 -lgomp -lpthread \
--o torch-example
+-o validate_libtorch
