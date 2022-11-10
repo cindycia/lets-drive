@@ -11,8 +11,8 @@ int main() {
     const size_t num_epochs    = 150;
 
     // Random dataset
-    auto x_train = torch::randint(0, 5, {20, 1});
-    auto y_train = torch::randint(0, 5, {20, 1});
+    auto x_train = torch::rand({20, 1});
+    auto y_train = torch::rand({20, 1});
 
     // Linear regression
     torch::nn::Linear model(input_size, output_size);
