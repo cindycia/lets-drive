@@ -13,6 +13,6 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN cd catkin_ws/src
 COPY catkin_ws/src catkin_ws/
 
-ENTRYPOINT ["/ros_entrypoint.sh"]
-CMD ["bash"]
+ENTRYPOINT ["bash", "/exp_entrypoint.sh"]
+# CMD ["bash"]
 
