@@ -13,6 +13,9 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN cd catkin_ws/src
 COPY catkin_ws/src catkin_ws/
 
+# setup new entrypoint
+COPY ./exp_entrypoint.sh /
+
 ENTRYPOINT ["bash", "/exp_entrypoint.sh"]
 # CMD ["bash"]
 
