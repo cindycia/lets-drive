@@ -1,0 +1,13 @@
+*.log
+*.png
+*.jpeg
+*.bag
+docker/Dockerfile.entry
+docker/Dockerfile.init_new
+docker/exp_entrypoint_old.sh
+docker/Dockerfile.set_env
+catkin_ws/src/crowd_pomdp_planner/libcarla
+catkin_ws/src/sac_discrete/trained_models
+catkin_ws/build
+catkin_ws/logs
+catkin_ws/devel

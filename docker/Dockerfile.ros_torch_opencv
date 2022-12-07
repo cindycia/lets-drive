@@ -1,0 +1,22 @@
+#name the image as noetic_cuda11_1_cudnn8_libtorch_opencv
+FROM noetic_cuda11_1_cudnn8 
+
+USER root
+WORKDIR /root
+
+
+RUN curl -o libtorch.zip https://download.pytorch.org/libtorch/lts/1.8/cu111/libtorch-cxx11-abi-shared-with-deps-1.8.2%2Bcu111.zip \
+    && unzip libtorch.zip \
+    && export LIBTORCH_SYS=/root/libtorch
+
+ENV LIBTORCH_SYS='/root/libtorch'
+COPY /setup ./setup
+RUN bash ./setup/validate_libtorch.sh \
+    && ./validate_libtorch
+
+RUN sudo apt install libopencv-dev python3-opencv
+
+
+ENTRYPOINT ["/ros_entrypoint.sh"]
+CMD ["bash"]
+

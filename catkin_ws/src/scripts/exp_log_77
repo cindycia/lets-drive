@@ -1,0 +1,198 @@
+Parsing config
+=> Running lets-drive drive_mode
+============== [run_data_collection.py] cmd_args ==============
+port=5000
+ros_port=5111
+ros command prefix: ROS_MASTER_URI=http://localhost:5111 
+summit map location: meskel_square
+summit random seed: 3241357
+launch summit: False
+start_round: 0
+end_round: 1
+timeout: 130.0
+verbosity: 1
+window: 0
+record: False
+gpu id: 0
+time scale: 1.0
+test mode: 0
+============== [run_data_collection.py] cmd_args ==============
+[run_data_collection.py] pid = 76
+[clear_process.py] SubprocessMonitor initialized at port 5111
+run_data_collection.py:217: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif cmd_args.drive_mode is "":
+run_data_collection.py:224: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if cmd_args.drive_mode is not "":
+run_data_collection.py:295: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if cmd_args.drive_mode is not "":
+[run_data_collection.py] roslaunch summit_connector connector.launch port:=5000 pyro_port:=11100 map_location:=meskel_square random_seed:=3241357 num_car:=75 num_bike:=25 num_ped:=10 ego_control_mode:=other ego_speed_mode:=vel
+[summit_simulator.py] spawning meshes
+=> Search log /root/driving_data/result/lets-drive_mode/meskel_square/pomdp_search_log-0_0_pid-76_r-3241357.txt
+[run_data_collection.py] roslaunch --wait crowd_pomdp_planner planner.launch gpu_id:=0 mode:=2 summit_port:=5000 time_scale:=1.00 map_location:=meskel_square actor_mode:=actor
+[run_data_collection.py] POMDP planning...
+[run_data_collection.py] SubprocessMonitor started
+[summit_simulator.py] spawning imagery
+Path not found! 18/124481_159296
+Path not found! 18/124481_159297
+Path not found! 18/124481_159298
+Path not found! 18/124481_159299
+Path not found! 18/124481_159300
+Path not found! 18/124482_159296
+Path not found! 18/124482_159297
+Path not found! 18/124482_159298
+Path not found! 18/124482_159299
+Path not found! 18/124482_159300
+Path not found! 18/124483_159296
+Path not found! 18/124483_159297
+Path not found! 18/124483_159298
+Path not found! 18/124483_159299
+Path not found! 18/124483_159300
+Path not found! 18/124484_159296
+Path not found! 18/124484_159297
+Path not found! 18/124484_159298
+Path not found! 18/124484_159299
+Path not found! 18/124484_159300
+Path not found! 18/124485_159296
+Path not found! 18/124485_159297
+Path not found! 18/124485_159298
+Path not found! 18/124485_159299
+Path not found! 18/124485_159300
+[summit_simulator.py] Spawning crowd
+[clear_process.py] SubprocessMonitor activated
+Parsing config
+=> Running lets-drive drive_mode
+============== [run_data_collection.py] cmd_args ==============
+port=2000
+ros_port=2111
+ros command prefix: ROS_MASTER_URI=http://localhost:2111 
+summit map location: meskel_square
+summit random seed: 2309837
+launch summit: False
+start_round: 0
+end_round: 1
+timeout: 130.0
+verbosity: 1
+window: 0
+record: False
+gpu id: 0
+time scale: 1.0
+test mode: 0
+============== [run_data_collection.py] cmd_args ==============
+[run_data_collection.py] pid = 76
+[clear_process.py] SubprocessMonitor initialized at port 2111
+run_data_collection.py:217: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  elif cmd_args.drive_mode is "":
+run_data_collection.py:224: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if cmd_args.drive_mode is not "":
+run_data_collection.py:295: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if cmd_args.drive_mode is not "":
+[run_data_collection.py] roslaunch summit_connector connector.launch port:=2000 pyro_port:=8100 map_location:=meskel_square random_seed:=2309837 num_car:=75 num_bike:=25 num_ped:=10 ego_control_mode:=other ego_speed_mode:=vel
+[summit_simulator.py] spawning meshes
+=> Search log /root/driving_data/result/lets-drive_mode/meskel_square/pomdp_search_log-0_0_pid-76_r-2309837.txt
+[run_data_collection.py] roslaunch --wait crowd_pomdp_planner planner.launch gpu_id:=0 mode:=2 summit_port:=2000 time_scale:=1.00 map_location:=meskel_square actor_mode:=actor
+[run_data_collection.py] POMDP planning...
+[run_data_collection.py] SubprocessMonitor started
+[summit_simulator.py] spawning imagery
+Path not found! 18/124481_159296
+Path not found! 18/124481_159297
+Path not found! 18/124481_159298
+Path not found! 18/124481_159299
+Path not found! 18/124481_159300
+Path not found! 18/124482_159296
+Path not found! 18/124482_159297
+Path not found! 18/124482_159298
+Path not found! 18/124482_159299
+Path not found! 18/124482_159300
+Path not found! 18/124483_159296
+Path not found! 18/124483_159297
+Path not found! 18/124483_159298
+Path not found! 18/124483_159299
+Path not found! 18/124483_159300
+Path not found! 18/124484_159296
+Path not found! 18/124484_159297
+Path not found! 18/124484_159298
+Path not found! 18/124484_159299
+Path not found! 18/124484_159300
+Path not found! 18/124485_159296
+Path not found! 18/124485_159297
+Path not found! 18/124485_159298
+Path not found! 18/124485_159299
+Path not found! 18/124485_159300
+[summit_simulator.py] Spawning crowd
+[clear_process.py] SubprocessMonitor activated
+[clear_process.py] ROS MASTER is OFFLINE
+[clear_process.py] roscore has died!!
+[crowd_processor.py] waiting for ego car state
+Ego_vehicle control mode: other
+Ego_vehicle speed mode: vel
+Ego-vehicle at 378.549072265625 481.8145751953125
+[crowd_processor.py] waiting for ego car state
+Ego_vehicle control mode: other
+Ego_vehicle speed mode: vel
+[crowd_processor.py] waiting for ego car state
+Ego-vehicle at 365.7872009277344 488.0788269042969
+[crowd_processor.py] waiting for ego car state
+Ego-vehicle start driving
+Ego-vehicle start driving
+[run_data_collection.py] episode successfully ended
+[run_data_collection.py] POMDP planner exited in 23.085559368133545 s
+[run_data_collection.py] Finish data: sample_0_0
+[run_data_collection.py] End of run_data_collection script
+[run_data_collection.py] is ending! Clearing ros nodes...
+[clear_process.py]  Cleaning ros: ['ROS_MASTER_URI=http://localhost:5111 yes | rosclean purge']
+Purging ROS node logs.
+PLEASE BE CAREFUL TO VERIFY THE COMMAND BELOW!
+Okay to perform:
+
+rm -rf /root/.ros/log
+(y/n)?
+[clear_process.py] rosnode list | grep -v rosout | xargs rosnode kill
+[Errno 2] No such file or directory: 'rosnode list | grep -v rosout | xargs rosnode kill'
+[run_data_collection.py] is ending! Clearing Processes...
+[run_data_collection.py] is ending! Clearing timer...
+[run_data_collection.py] is ending! Clearing subprocesses...
+[clear_process.py] clearing queue [(<subprocess.Popen object at 0x7f01a3ce1df0>, 'summit_connector_proc', None)]
+[clear_process.py] killing summit_connector_proc
+Spawn-destroy loop running.
+Control loop running.
+GAMMA loop running.
+[clear_process.py] Subprocess summit_connector_proc has died
+[clear_process.py]  Cleaning ros: ['ROS_MASTER_URI=http://localhost:5111 yes | rosclean purge']
+[clear_process.py] rosnode list | grep -v rosout | xargs rosnode kill
+[Errno 2] No such file or directory: 'rosnode list | grep -v rosout | xargs rosnode kill'
+[clear_process.py]  clearing process
+[clear_process.py] pkill -9 CarlaUE4-Linux-
+[clear_process.py] pkill -9 ped_pomdp
+[clear_process.py]  clearing ros
+[clear_process.py] pkill -9 python3
+[run_data_collection.py] episode successfully ended
+[run_data_collection.py] POMDP planner exited in 24.737218141555786 s
+[run_data_collection.py] Finish data: sample_0_0
+[run_data_collection.py] End of run_data_collection script
+[run_data_collection.py] is ending! Clearing ros nodes...
+[clear_process.py]  Cleaning ros: ['ROS_MASTER_URI=http://localhost:2111 yes | rosclean purge']
+Purging ROS node logs.
+PLEASE BE CAREFUL TO VERIFY THE COMMAND BELOW!
+Okay to perform:
+
+rm -rf /root/.ros/log
+(y/n)?
+[clear_process.py] rosnode list | grep -v rosout | xargs rosnode kill
+[Errno 2] No such file or directory: 'rosnode list | grep -v rosout | xargs rosnode kill'
+[run_data_collection.py] is ending! Clearing Processes...
+[run_data_collection.py] is ending! Clearing timer...
+[run_data_collection.py] is ending! Clearing subprocesses...
+[clear_process.py] clearing queue [(<subprocess.Popen object at 0x7f65fc1f5e20>, 'summit_connector_proc', None)]
+[clear_process.py] killing summit_connector_proc
+GAMMA loop running.
+Control loop running.
+Spawn-destroy loop running.
+[clear_process.py] Subprocess summit_connector_proc has died
+[clear_process.py]  Cleaning ros: ['ROS_MASTER_URI=http://localhost:2111 yes | rosclean purge']
+[clear_process.py] rosnode list | grep -v rosout | xargs rosnode kill
+[Errno 2] No such file or directory: 'rosnode list | grep -v rosout | xargs rosnode kill'
+[clear_process.py]  clearing process
+[clear_process.py] pkill -9 CarlaUE4-Linux-
+[clear_process.py] pkill -9 ped_pomdp
+[clear_process.py]  clearing ros
+[clear_process.py] pkill -9 python3
