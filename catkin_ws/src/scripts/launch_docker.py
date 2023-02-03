@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--image',
                         type=str,
-                        default="wenjingtang/noetic_cuda11_1_cudnn8_libtorch_opencv4_ws_zero",
+                        default="wenjingtang/noetic_cuda11_1_cudnn8_libtorch_opencv4_ws",
                         help='Image to launch')
     parser.add_argument('--port',
                         type=int,

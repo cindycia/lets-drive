@@ -20,13 +20,21 @@ docker run -it noetic_cuda11_1_cudnn8_libtorch_opencv .
 ```
 
 
-
-## 3. The final container
+## 3. The container withour entry file.
 
 Need to mount the catkin_ws to the container
 
 ```bash
-docker build -t noetic_cuda11_1_cudnn8_libtorch_opencv4_ws_zero -f Dockerfile.init .
-docker run -it -v /path/to/your/lets_drive/docker/catkin_ws:/root/catkin_ws lets_drive_test1 /bin/bash
+docker build -t noetic_cuda11_1_cudnn8_libtorch_opencv4_ws_noentry -f Dockerfile.init_empty .
+docker run -it -v /path/to/your/lets_drive/docker/catkin_ws:/root/catkin_ws noetic_cuda11_1_cudnn8_libtorch_opencv4_ws_noentry /bin/bash
+```
+
+## 4. The final container
+
+Need to mount the catkin_ws to the container
+
+```bash
+docker build -t noetic_cuda11_1_cudnn8_libtorch_opencv4_ws -f Dockerfile.init .
+docker run -it -v /path/to/your/lets_drive/docker/catkin_ws:/root/catkin_ws noetic_cuda11_1_cudnn8_libtorch_opencv4_ws /bin/bash
 ```
 

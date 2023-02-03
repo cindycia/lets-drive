@@ -1,0 +1,16 @@
+FROM noetic_cuda11_1_cudnn8_libtorch_opencv
+ 
+USER root
+WORKDIR /root
+
+# RUN mkdir -p catkin_ws/src
+
+RUN apt-get -y update
+RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN apt-get -y install vim pip
+RUN pip3 install numpy pygame pathlib Pyro4 
+RUN pip3 install numpy --upgrade
+RUN pip3 install torch==1.8.2+cu111 torchvision==0.9.2+cu111 torchaudio===0.8.2 -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+RUN pip3 install config
+
+RUN rm -rf /var/lib/apt/lists/*
