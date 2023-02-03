@@ -1,6 +1,6 @@
 This is the code repo for our T-RO paper: P. Cai and D. Hsu, "Closing the Planning–Learning Loop With Application to Autonomous Driving," in IEEE Transactions on Robotics, doi: 10.1109/TRO.2022.3210767.
 ```
-@ARTICLE{9967016,
+@ARTICLE{lets-drive,
   author={Cai, Panpan and Hsu, David},
   journal={IEEE Transactions on Robotics}, 
   title={Closing the Planning–Learning Loop With Application to Autonomous Driving}, 
