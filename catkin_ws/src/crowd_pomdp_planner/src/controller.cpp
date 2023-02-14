@@ -344,7 +344,7 @@ bool Controller::RunPreStep(Solver* solver, World* world, Logger* logger) {
 
 	logger->CheckTargetTime();
 
-	cerr << "DEBUG: Pre-updating belief" << endl;
+	cerr << "DEBUG: Pre-updating world state" << endl;
 
 	auto start_t = Time::now();
 
@@ -352,7 +352,8 @@ bool Controller::RunPreStep(Solver* solver, World* world, Logger* logger) {
 	if (!cur_state)
 		ERR(string_sprintf("cur state NULL"));
 
-	cerr << "DEBUG: Updating belief" << endl;
+	cerr << "DEBUG: Pre-updating belief" << endl;
+
 	ped_belief_->Update(last_action_, cur_state);
 	ped_belief_->Text(cout);
 

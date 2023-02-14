@@ -277,10 +277,14 @@ void CrowdBelief::Update(ACT_TYPE action, const State* state) {
 		logd << "[Update] agent " << agent.id << " num_intentions=" << num_intentions << endl;
 		if (it1 != indexed_belief.end()) { // existing agents
 			AgentBelief* agent_belief = it1->second;
-			if (world_model_.NeedBeliefReset(id))
+			if (world_model_.NeedBeliefReset(id)){
+				logd << "[Update] agent " << agent.id << " needs belief reset" << endl;
 				agent_belief->Reset(num_intentions);
+			}
 			agent_belief->Update(world_model_, agent, num_intentions);
 		} else { // new agent
+			logd << "[Update] creating new agent." << endl;
+
 			indexed_belief[id] = new AgentBelief(num_intentions, PED_MODES::NUM_AGENT_TYPES);
 			indexed_belief[id]->observable_ = agent;
 		}
@@ -288,26 +292,44 @@ void CrowdBelief::Update(ACT_TYPE action, const State* state) {
 	logd << "[CrowdBelief::Update] " << "indexed_belief.size()=" << indexed_belief.size() << endl;
 
 	// remove out-dated agents
+// 	double time_stamp = Globals::ElapsedTime();
+// 	for (std::map<int,AgentBelief*>::iterator it=indexed_belief.begin(); it!=indexed_belief.end(); ++it) {
+// 		// logd << "[CrowdBelief::Update] " << "find out-dated agents" << endl;
+
+// 		AgentBelief* agent_belief = it->second;
+// 		int id = it->first;
+// 		if (src_agent_map.find(id) == src_agent_map.end()) {
+// //		if (agent_belief->OutDated(time_stamp)) {
+// 			logd << "[CrowdBelief::Update] " << "cur time_stamp = " << time_stamp
+// 					<< ", belief time_stamp="<< agent_belief->time_stamp << endl;
+
+// 			delete agent_belief;
+// 			indexed_belief.erase(it);
+// 			logd << "[CrowdBelief::Update] " << "removed one agent belief" << endl;
+
+// 		}
+// 	}
+	// remove out-dated agents
 	double time_stamp = Globals::ElapsedTime();
-	for (std::map<int,AgentBelief*>::iterator it=indexed_belief.begin(); it!=indexed_belief.end(); ++it) {
+	std::map<int,AgentBelief*>::iterator it = indexed_belief.begin();
+	while (it != indexed_belief.end()){
 		AgentBelief* agent_belief = it->second;
 		int id = it->first;
 		if (src_agent_map.find(id) == src_agent_map.end()) {
-//		if (agent_belief->OutDated(time_stamp)) {
-			logd << "[CrowdBelief::Update] " << "cur time_stamp = " << time_stamp
-					<< ", belief time_stamp="<< agent_belief->time_stamp << endl;
-
+		// if (agent_belief->OutDated(time_stamp)) {
+			logd << "[CrowdBelief::Update] " << "agent disappear" << endl; 
 			delete agent_belief;
-			indexed_belief.erase(it);
-		}
+			it = indexed_belief.erase(it);
+		} else 
+			++it;
 	}
 
-	// agents disappeared less than 2 seconds
+	// reset belief when no path available
 	for (auto it=indexed_belief.begin(); it!=indexed_belief.end(); ++it) {
 		AgentBelief* agent_belief = it->second;
 		if (world_model_.NumPaths(agent_belief->observable_.id) == 0) {
-			logd << "[CrowdBelief::Update] " << "cur time_stamp = " << time_stamp
-					<< ", belief time_stamp="<< agent_belief->time_stamp << endl;
+			logd << "[CrowdBelief::Update] agent " << it->first
+					<< " has no path available, resetting belief." << endl;
 			agent_belief->Reset(world_model_.GetNumIntentions(agent_belief->observable_.id));
 		}
 	}

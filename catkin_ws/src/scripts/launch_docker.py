@@ -4,9 +4,12 @@ import subprocess
 
 home = expanduser("~")
 
-catkin_ws_path = home + '/lets_drive_docker/catkin_ws'
+# home= "/home/lets_drive"
+
+catkin_ws_path = home + '/lets-drive/catkin_ws'
 
 summit_path = home + "/summit"
+# print(summit_path)
 
 if not os.path.isdir(catkin_ws_path):
     catkin_ws_path = home + '/catkin_ws'
@@ -56,5 +59,5 @@ if __name__ == '__main__':
                 "-e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix " + \
                 config.image + " " + str(config.gpu) + " " + str(config.port) \
                 + " " + str(config.recordbag) + " " + str(config.mode)
-    print(cmd_args)
+    # print("cmd_args: ", cmd_args)
     subprocess.call(cmd_args.split())

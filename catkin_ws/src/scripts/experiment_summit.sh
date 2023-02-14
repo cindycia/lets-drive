@@ -81,6 +81,9 @@ rm exp_log_*
 echo "log: exp_log_"$s'_'$e
 # export CUDA_VISIBLE_DEVICES=$gpu
 # echo "CUDA_VISIBLE_DEVICES=" $CUDA_VISIBLE_DEVICES
+
+echo "source /opt/ros/noetic/setup.bash"
+
 for i in $(seq $s $e)
 do
     echo "[experiment_summit] clearing process"

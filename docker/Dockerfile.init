@@ -17,6 +17,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 # RUN cd catkin_ws/src
 # COPY catkin_ws/src catkin_ws/src
+ENV LIBTORCH_SYS='/root/libtorch'
 
 COPY ./exp_entrypoint_old.sh /exp_entrypoint.sh 
 RUN ["chmod", "+x", "/exp_entrypoint.sh"] 

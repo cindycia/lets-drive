@@ -157,35 +157,35 @@ void rm_files_in_folder(string folder) {
 }
 
 void clear_image_folder() {
-	std::string homedir = getenv("HOME");
-	img_folder = homedir + "/catkin_ws/visualize";
-	mkdir_safe(img_folder);
-	rm_files_in_folder(img_folder);
+	// std::string homedir = getenv("HOME");
+	// img_folder = homedir + "/catkin_ws/visualize";
+	// mkdir_safe(img_folder);
+	// rm_files_in_folder(img_folder);
 }
 
 void export_image(Mat& image, string flag) {
-	logi << "[export_image] start" << endl;
-	std::ostringstream stringStream;
-	stringStream << img_folder << "/" << img_counter << "_" << flag << ".jpg";
-	std::string img_name = stringStream.str();
+	// logi << "[export_image] start" << endl;
+	// std::ostringstream stringStream;
+	// stringStream << img_folder << "/" << img_counter << "_" << flag << ".jpg";
+	// std::string img_name = stringStream.str();
 
-	Mat tmp = image.clone();
+	// Mat tmp = image.clone();
 
-	double image_min, image_max;
-	cv::minMaxLoc(tmp, &image_min, &image_max);
-	logi << "saving image " << img_name << " with min-max values: " << image_min
-			<< ", " << image_max << endl;
+	// double image_min, image_max;
+	// cv::minMaxLoc(tmp, &image_min, &image_max);
+	// logi << "saving image " << img_name << " with min-max values: " << image_min
+	// 		<< ", " << image_max << endl;
 
-	cv::Mat for_save;
-	tmp.convertTo(for_save, CV_8UC3, 255.0);
-	imwrite(img_name, for_save);
+	// cv::Mat for_save;
+	// tmp.convertTo(for_save, CV_8UC3, 255.0);
+	// imwrite(img_name, for_save);
 
 //	imshow( img_name, image );
 //
 //	char c = (char)waitKey(0);
 //
 //	cvDestroyWindow((img_name).c_str());
-	logi << "[export_image] end" << endl;
+	// logi << "[export_image] end" << endl;
 }
 
 void inc_counter() {
